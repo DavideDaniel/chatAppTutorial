@@ -39,6 +39,7 @@ var WebSocket = require("ws").Server;
 var chatServ = new WebSocket({port:3000});
 var users = [];
 
+
     chatServ.on("connection" , function(ws){
       console.log("connection");
       users.push(ws);
