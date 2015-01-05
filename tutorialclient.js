@@ -3,62 +3,67 @@ var client = new WebSocket( 'ws://localhost:3000' );
 var userName = '';
 var connected = false;
 
-client.addEventListener( "open", function ( evt ) {
-connected = true;
-console.log( "Connected to server." + connected );
+// upon open
+client.addEventListener( 'open', function () {
+	connected = true;
+	console.log( "Connected to server." + connected );
+	// grab inputTwo
 
-var inputTwo = document.getElementById( "inputTwo" )
-
-	inputTwo.addEventListener( "keyup", function ( e ) {
+	var inputTwo = document.getElementById( 'inputTwo' )
+	// event listener on inputTwo
+	inputTwo.addEventListener( 'keyup', function ( e ) {
+		// if enter is pressed and the box is NOT empty
 		if ( e.keyCode === 13 && inputOne.value.trim() != '' ) {
-			var fixedDiv = document.querySelector( "#fixed" )
-			var button = document.getElementById( "login" );
+			// set the userName value...
+			var fixedDiv = document.querySelector( '#fixed' )
 			userName = inputOne.value;
+			// and grab the fixedDiv and set it's style to make it disappear!
 			fixedDiv.style.display = 'none';
 		}
-
 	} );
-
 } );
 
+// upon recieving a message
 client.addEventListener( 'message', function ( message ) {
-    // var msg = JSON.parse( message.data );
-    	var li = document.createElement("li");
-      li.innerText= message;
-      li.style.listStyle = "none";
-      var chatbox = document.getElementById("chat");
-      chatbox.appendChild(li);
 
-      var before = inset.firstChild;
-	inset.insertBefore( li, before )
-    
+	//create an li element
+	var li = document.createElement( "li" );
+	// change it's innerText value to the recieved message
+	li.innerText= input.value;
+    // set it's id to 'msg'
+    li.setAttribute('id', 'msg')
+    // grab the ul element  	
+    var msgHolder = document.querySelector("ul#msgHolder");
+      	// and append it to include the new li
+      	msgHolder.appendChild(li);
+		// then have it display BEFORE the newest element
+		var before = ul.firstChild;
+		ul.insertBefore( li, before )
 
 } );
 
-client.addEventListener('close', function () {
-connected = false;
-console.log(connected);
-});
+client.addEventListener( 'close', function () {
+	connected = false;
+	console.log( connected );
+} );
 
-var input = document.getElementById("inputOne")
-        
-        input.addEventListener("keyup", function(e) {
-        if(e.keyCode === 13) {
-        var newMessage = input.value;
-        client.send(userName+': '+ newMessage);
-        input.value = ''; //clear the input area
-      }
+var input = document.getElementById( "inputOne" )
 
-  });
+input.addEventListener( "keyup", function ( e ) {
+	if ( e.keyCode === 13 ) {
+		var newMessage = input.value;
+		client.send( userName + ': ' + newMessage );
+		input.value = ''; //clear the input area
+	}
 
+} );
 
 // TEST appending
 // var input = document.getElementById("inputMsg")
 
-        
 //         input.addEventListener("keyup", function(e) {
 //         if(e.keyCode === 13) {
-//         var ul
+//         
 //         var li = document.createElement("li");
 //       	li.innerText= input.value;
 //       	li.setAttribute('id', 'msg')
@@ -71,4 +76,3 @@ var input = document.getElementById("inputOne")
 //       }
 
 //   });
-
