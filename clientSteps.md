@@ -66,6 +66,7 @@ In order for the client to connect to the server we'll want to set up some varia
 
     ```javascript
     var userName = '';
+    var connected = true;
     ```
 
 3. Let's setup event listeners for the client to determine what's happening.
@@ -130,6 +131,49 @@ In order for the client to connect to the server we'll want to set up some varia
         var before = ul.firstChild;
         ul.insertBefore( li, before )
 
+    } );
+    ```
+
+6. While we're not doing anything complex yet, you can certainly have events occur upon close. Let's make a couple edits to display this.
+    
+    We'll add a boolean to the file
+    ```javascript
+    var userName = '';
+    var connected = false; //set to false by default
+    ```
+
+    and have it return true upon connect
+    ```javascript
+    client.addEventListener( 'open', function () {
+        connected = true;
+    ```
+
+    and have it return back to false upon close!
+    ```javascript
+    client.addEventListener( 'close', function () {
+        connected = false;
+    ```
+Whie not necessary in our tutorial app, just note that it's possible to have events occur on the client side but you can't send anything to the server upon close.
+
+7. BUT WAIT! How on earth do we send messages?!!
+    Well.. there's an app for that...
+    But seriously...
+    We've already done it upon connection so let's make another event listener.
+
+    ```javascript
+    // grab the inputMsg element
+    var inputMsg = document.getElementById( 'inputMsg' )
+
+    inputMsg.addEventListener( 'keyup', function ( e ) {
+        // upon pressing enter
+        if ( e.keyCode === 13 ) {
+            // grab the text in the input box and call it newMessage
+            var newMessage = input.value;
+            // with the .send method let's format and send our name & message
+            client.send( userName + ': ' + newMessage );
+            // finally, let's clear the input box
+            input.value = ''; //clear the input area
+        }
     } );
     ```
 

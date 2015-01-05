@@ -9,7 +9,7 @@ client.addEventListener( 'open', function () {
 	console.log( "Connected to server." + connected );
 	// grab inputTwo
 
-	var inputTwo = document.getElementById( 'inputTwo' )
+	var inputTwo = document.getElementById( 'inputName' )
 	// event listener on inputTwo
 	inputTwo.addEventListener( 'keyup', function ( e ) {
 		// if enter is pressed and the box is NOT empty
@@ -27,18 +27,18 @@ client.addEventListener( 'open', function () {
 client.addEventListener( 'message', function ( message ) {
 
 	//create an li element
-	var li = document.createElement( "li" );
+	var li = document.createElement( 'li' );
 	// change it's innerText value to the recieved message
-	li.innerText= input.value;
-    // set it's id to 'msg'
-    li.setAttribute('id', 'msg')
-    // grab the ul element  	
-    var msgHolder = document.querySelector("ul#msgHolder");
-      	// and append it to include the new li
-      	msgHolder.appendChild(li);
-		// then have it display BEFORE the newest element
-		var before = ul.firstChild;
-		ul.insertBefore( li, before )
+	li.innerText = input.value;
+	// set it's id to 'msg'
+	li.setAttribute( 'id', 'msg' )
+	// grab the ul element  	
+	var msgHolder = document.querySelector( "ul#msgHolder" );
+	// and append it to include the new li
+	msgHolder.appendChild( li );
+	// then have it display BEFORE the newest element
+	var before = ul.firstChild;
+	ul.insertBefore( li, before )
 
 } );
 
@@ -47,9 +47,9 @@ client.addEventListener( 'close', function () {
 	console.log( connected );
 } );
 
-var input = document.getElementById( "inputOne" )
+var inputMsg = document.getElementById( 'inputMsg' )
 
-input.addEventListener( "keyup", function ( e ) {
+inputMsg.addEventListener( 'keyup', function ( e ) {
 	if ( e.keyCode === 13 ) {
 		var newMessage = input.value;
 		client.send( userName + ': ' + newMessage );
@@ -58,21 +58,3 @@ input.addEventListener( "keyup", function ( e ) {
 
 } );
 
-// TEST appending
-// var input = document.getElementById("inputMsg")
-
-//         input.addEventListener("keyup", function(e) {
-//         if(e.keyCode === 13) {
-//         
-//         var li = document.createElement("li");
-//       	li.innerText= input.value;
-//       	li.setAttribute('id', 'msg')
-//       	var msgHolder = document.querySelector("ul#msgHolder");
-//       	msgHolder.appendChild(li);
-
-//       	var before = ul.firstChild;
-// 		ul.insertBefore( li, before )
-//         input.value = ''; //clear the input area
-//       }
-
-//   });
