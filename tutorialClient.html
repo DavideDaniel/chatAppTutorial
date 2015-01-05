@@ -1,0 +1,42 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- link to style sheet - we'll get to his later! -->
+        <link rel="stylesheet" type="text/css" href="tutorialStyle.css">
+
+        <title>Chat</title>
+
+    </head>
+    <body>
+        <!-- In the beginning there was a div for the header -->
+        <div class="header">
+            <h2>Chat App</h2>
+        </div>
+
+        <!-- But! Here's a div that binds them all! -->
+        <div class="container">
+            <!-- and in the darkness... presents the message... -->
+            <div id="inset">
+                <!-- but first this div collects your name! -->
+                <div id = "fixed">
+                    <p id="enter"> Please enter your screen name:</p></br>
+                    <input type="text" id="inputOne" placeholder="Name"></input>
+                </div>
+
+                <ul id="msgHolder"></ul>
+
+            </div>
+        </div>
+        
+        <!-- This div holds the input box -->
+        <div class="bottom">
+            <!-- <div class="bottom"> -->
+                <input placeholder="Type here" id="inputMsg"></input>
+            <!-- </div> -->
+        </div>
+
+
+
+<script type="text/javascript" src="tutorialclient.js"></script>
+</body>
+</html>
