@@ -11,55 +11,43 @@ Let's make a barebones HTML file that'll allow us to use the client for the chat
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <!-- link to style sheet - we'll get to his later! -->
+        <link rel="stylesheet" type="text/css" href="tutorialStyle.css">
 
-        <link rel="stylesheet" type="text/css" href="stylechat.css">
-        <script src="node_modules/moment/moment.js"></script>
         <title>Chat</title>
 
     </head>
-    <style type="text/css">
-    </style>
-    <header>
-        <div class="header">
-        </div>
-    </header>
     <body>
-        <div class="container">
-            <div class="sidebar">
-                <div id="title">
-                    <h4>slacker</h4>
-                </div>
-
-                    <div class="channels">
-                        <h4>@channels</h4>
-                    <ul id = "channels"><li></li></ul>
-                </div>
-                <div class="users">
-                    <h4>@users</h4>
-                <ul id="users"><li></li></ul>
-            </div>
-
-
-    </div>
-    <div id="inset">
-        <div id = "fixed">
-                                <p id="enter"> Please enter your screen name and channel:</p></br>
-                                <input type="text" id="inputOne" placeholder="Name"></input>
-                                <input type="text" id="inputTwo" placeholder ="Room "></input>
+        <!-- In the beginning there was a div for the header -->
+        <div class="header">
+            <h2>Chat App</h2>
         </div>
-    </div>
-</div>
-<div class="bottom">
-    <div class="me"><div id="profile"></div></div>
-    <div class="input">
-        <input placeholder="Type here" id="inputMsg"></input>
-    </div>
-</div>
-</div>
-<script type="text/javascript" src="c4.js">
-</script>
-<script>
-</script>
+
+        <!-- But! Here's a div that binds them all! -->
+        <div class="container">
+            <!-- and in the darkness... presents the message... -->
+            <div id="inset">
+                <!-- but first this div collects your name! -->
+                <div id = "fixed">
+                    <p id="enter"> Please enter your screen name:</p></br>
+                    <input type="text" id="inputOne" placeholder="Name"></input>
+                </div>
+
+                <ul id="msgHolder"></ul>
+
+            </div>
+        </div>
+        
+        <!-- This div holds the input box -->
+        <div class="bottom">
+            <!-- <div class="bottom"> -->
+                <input placeholder="Type here" id="inputMsg"></input>
+            <!-- </div> -->
+        </div>
+
+
+
+<script type="text/javascript" src="tutorialclient.js"></script>
 </body>
 </html>
 ```
@@ -78,13 +66,25 @@ In order for the client to connect to the server we'll want to set up some varia
     var userName = '';
     ```
 
-3. The client determines whether it's connected via an event listener:
+3. Let's setup event listeners for the client to determine what's happening.
 
+
+The client determines whether it's connected via an event listener:
 
 ```javascript
+client.addEventListener( 'open', function ( evt ) {
 
-client.addEventListener( "open", function ( evt ) {
-console.log( "Connected to server" );
+} );
+
+
+
+client.addEventListener( 'message', function ( message ) {
+
+} )
+
+
+client.addEventListener( 'close', function ( evt ) {
+
 } );```
 
-4. 
+4. Client listens for a message and executes a function with the message as the parameter here
