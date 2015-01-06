@@ -1,4 +1,10 @@
-
+div.sidepanel {
+  position: fixed;
+  top: 100;
+  left: 0;
+  height:100%;
+  width: 10%;
+}
 
 pre {
   background-color: #222222;

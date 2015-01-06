@@ -17,13 +17,23 @@ body {
   margin: 0;
   display: flex;
 }
-.sidebar{
-  float: left;
-  flex: 1;
-  min-width: 30%;
 
+#content {
+  margin-left: 30%;
+}
+
+.nav_menu {
+  /*float: left;
+  flex: 1;
+  min-width: 30%;*/
+  position: fixed;
+  top: 100;
+  left: 0;
+  height:100%;
+  width: 30%;
   background-color: black;
 }
+
 xmp {
 
 }
