@@ -2,18 +2,18 @@
     font-family: Helvetica, arial, sans-serif;
 }
 .header {
-    background-color: #999;
-    font-size: 100%;
-    text-align: center;
-    width: 20%;
-    margin: auto;
+    background-color: #999; /*set the background-color*/
+    font-size: 100%;    /*set the font-size to 100% (note the %)*/
+    text-align: center; /*set the text-align value to center*/
+    width: 50%; /*we'll establish the width at 50%*/
+    margin-left: 25%; /*as we've set the width to 50% we can set the margin-left at 25% thereby centering the element*/ 
 }
 
 .container {
     border: thin solid black;
     height: 80%;
     width: 80%;
-    min-width: 500px;
+    /*min-width: 500px;*/
     display: flex;
     margin: auto;
 }
@@ -33,20 +33,11 @@ p#enter {
     vertical-align: top;
 }
 
-#inputOne {
-    border: thin solid green;
-    height: 5%;
-    width: 45%;
-    flex: 2;
-    margin: auto;
-    text-align: center;
-}
-
 #inset {
     border: thin solid red;
     height: 100%;
     width: 100%;
-    min-width: 300px;
+    min-width: 30vh;
     overflow: auto;
     align-self: center;
     display: flex;
@@ -60,13 +51,13 @@ p#enter {
     width: 80%;
     display: flex;
     margin: auto;
-    min-width: 500px;
-    font-size: 20px;
+    /*min-width: 500vh;*/
+    font-size: 1.25em;
 }
 
 #inputMsg {
     flex: 2;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 li#msg {
