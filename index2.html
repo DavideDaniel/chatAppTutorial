@@ -21,29 +21,33 @@
 <!-- <div class = "sidepanel"> -->
 
 <div class="nav_menu">
-  <div class="step top">Git Repos</div>
-  <div class="step inner">GitHub</div>
-  <div class="step inner">Server Side</div>
-  <div class="step inner">Client Side</div>
-  <div class="step inner">Testing Locally</div>
-  <div class="step inner">Styling</div>
-  <div class="step bottom">Hosting</div>
+  <div id="repo" class="step top" href="#">Intro</div>
+  <div id="github" class="step inner" href="#">Git & GitHub</div>
+  <div id="server" class="step inner" href="#">Server Side</div>
+  <div id="client" class="step inner" href="#">Client Side</div>
+  <div id="testing" class="step inner" href="#">Testing Locally</div>
+  <div id="styling" class="step inner" href="#">Styling</div>
+  <div id="hosting" class="step bottom" href="#">Hosting</div>
 </div>
 
 
 
-
+<div id="links">
+  <div id="gitLink" class="link"><a href="http://rogerdudler.github.io/git-guide/">An simple guide to Git</a></div>
+  <div id="githubLink" class="link"><a href="https://help.github.com/articles/set-up-git/">Getting Started with GitHub</a></div>
+  <div id="serverLink" class="link"> <a href=" http://www.developerfusion.com/article/143158/an-introduction-to-websockets/">Intro to WebSockets</a></div>
+  <div id="serverLink2" class="link"><a href="https://www.websocket.org/aboutwebsocket.html">The WebSocket Authority</a></div>
+  <div id="serverLink3" class="link"><a href="http://cjihrig.com/blog/creating-your-own-node-js-websocket-echo-server/">Echo WebSocket servers</a></div>
+  <div id="clientLink" class="link"><a href="http://ahoj.io/nodejs-and-websocket-simple-chat-tutorial">Some other guy's tutorial with JSON</a></div>
+  <div id="clientLink2" class="link"><a href="https://developer.mozilla.org/en-US/docs/WebSockets/Writing_WebSocket_client_applications">MDN's take on Clients with JSON</a></div>
+</div>
 
 <xmp theme="cerulean" style="display:none;">
 
-## [Intro](#1)
-## [Git Repos](#2)
-## [GitHub](#2)
-## [Server side](#3)
-## [Client side](#chapter4)
-## [Testing locally](#5)
-## [Styling](#chapter-6)
-## [Hosting](#chapter-7)
+<a id="one"></a>
+
+## Step 1
+
 
 #chat App tutorial
 
@@ -65,7 +69,8 @@ We'll teach you what a server and client does and of course give you instruction
 
 By the end you will have learned: how to create a server and client, how to get them communicating with each other, how to style the app, how to test it, how to host it, and finally,  how to impress the internet by pushing your code to Github.
 
-###WebSockets
+<a id="two"></a>
+## Step 2
 
 
 ##Git & Github
@@ -124,6 +129,9 @@ Assuming you've already created a folder inside your text editor. Now its time t
   $ git push origin master
 
   ```
+<a id="three"></a>
+
+## Step 3
 
 <h3 id = "3">Server side</h3>
 
@@ -221,6 +229,10 @@ information in every message beyond simple strings.
 </span>
 
 </div>
+
+<a id="four"></a>
+
+## Step 4
 
 <h3 id = "4">Client Side</h3>
 
@@ -400,8 +412,11 @@ While not necessary in our tutorial app, just note that it's possible to have ev
   And now you have a functional frontend JS file for your client!
 </xmp>
 
-<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery-scrollto.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="dist/js/bootstrap.min.js"></script>
+    <script src="scroll.js"></script>
   </body>
 </html>
