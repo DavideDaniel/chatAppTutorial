@@ -109,6 +109,19 @@ body {
   text-align: center;
   font-size: 1.1em;
   line-height: 30px;
+}
+
+.step:active {
+  background-color: #2893e5;
+  color: white;
+}
+
+.step.active {
+  background-color: #2893e5;
+  color: white;
+}
+
+
 
 
 /*.top {
