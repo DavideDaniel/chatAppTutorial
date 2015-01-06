@@ -7,11 +7,11 @@
 We'll reference our HTML file here a few times so for the whole code, please refer to [clientSteps link here eventually](clientsteps link here)
 
 
-####Divs Divs Divs
+####Divs Divs Divs - IT'S ALL ABOUT DEM DIVS!
 
-In order for us to have a responsive (and what other way is there to be?!) design let's start with some givens.
+In order for us to have a responsive design (and what other way is there to be?!) let's start with some givens.
 
-1. Flexbox [link to flex](link here)
+1. *Flexbox [link to flex](link here)
     This alone will make your CSS life easier
 2. Use percentages and vh instead of fixed pixels when able to in order to have a relative design. [provide links on the side to responsive design]
     With the following snippet in your header you're establishing that the width of the content will be the device width, and with percentages you should be able to have easy responsive design.

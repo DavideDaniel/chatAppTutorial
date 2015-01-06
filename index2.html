@@ -35,29 +35,24 @@
 
 
 <xmp theme="cerulean" style="display:none;">
-
-## [Intro](#1)
-## [Git Repos](#2)
-## [GitHub](#2)
-## [Server side](#3)
-## [Client side](#chapter4)
-## [Testing locally](#5)
-## [Styling](#chapter-6)
-## [Hosting](#chapter-7)
-
-#chat App tutorial
+####[Intro](#1) | [Git repos](#2) | [GitHub](#2) | [Server side](#3) | [Client side](#chapter4) | [Testing locally](#5) | [Styling](#chapter-6) [Hosting](#chapter-7)   
 
 
-<h3 id = "1">Build your own chat app</h3>
+---
+
+#Chat App Tutorial
+---
+
+<h2 id = "1">Build your own chat app!</h3>
 
 
-If you'd like to create the next SnapChat, proceed.
+If you'd like to create the next SnapChat, proceed. 
 
-If you'd like to be the creator of a new and improved SnapChat, read on.
+If you'd like to be the creator of a new and improved SnapChat, read on. 
 
-You still there? Awesome. Thanks for checking out our tutorial!
+You still there? Awesome. Thanks for checking out our tutorial! 
 
-Today you'll learn how to create your first functional, peer to peer, chat app. For many beginner JavaScript developers, building one of these has become somewhat of a rite of passage so congratulations, welcome to the club. Chatapp projects are a good place to test your budding Javascript skills because it's framework comprise of complex yet accessible parts.
+Today you'll learn how to create your first functional, peer to peer, chat app. For many beginner JavaScript developers, building one of these has become somewhat of a rite of passage so congratulations, welcome to the club. Chatapp projects are a good place to test your budding Javascript skills because it's framework comprise of complex yet accessible parts. 
 
 Here, we'll show you the basic framework. And from the framework, we'll go on to teach you how to style, test, and host your site! Sounds like a lot right? Don't panic, youre in good hand. By the end of our tutorial, you'll be able to build features that go above and beyond the SnapChat-standard.
 
@@ -67,8 +62,14 @@ By the end you will have learned: how to create a server and client, how to get 
 
 ###WebSockets
 
+Needs content
 
-##Git & Github
+###JSON (but keeping it simple for now)
+
+Needs content
+
+---
+#Git & Github
 
 <h3 id = "2">Creating a Git Repository</h3>
 
@@ -76,25 +77,26 @@ The git init command creates a new Git repository. It can be used to convert an 
 
 The git clone command copies an existing Git repository. This is sort of like svn checkout, except the “working copy” is a full-fledged Git repository—it has its own history, manages its own files, and is a completely isolated environment from the original repository.
 
-The git config command lets you configure your Git installation (or an individual repository) from the command line. This command can define everything from user info to preferences to the behavior of a repository. Several common configuration options are listed below.
+The git config command lets you configure your Git installation (or an individual repository) from the command line. This command can define everything from user info to preferences to the behavior of a repository. Several common configuration options are listed below. 
 
 Linktos or Asides or Syntax Bubble:
 
-Executing git init creates a .git subdirectory in the project root, which contains all of the necessary metadata for the repo, and makes it possible to start recording revisions of the project..
+Executing git init creates a .git subdirectory in the project root, which contains all of the necessary metadata for the repo, and makes it possible to start recording revisions of the project.. 
 
 ```
     $ git clone <repository link>
 ```
 Clone the repository located at <repo> onto the local machine. The original repository can be located on the local filesystem or on a remote machine accessible via HTTP or SSH.
 
-To update your local repository to the newest commit, execute git pull in your working directory to fetch and merge remote changes. To merge another branch in
+To update your local repository to the newest commit, execute git pull in your working directory to fetch and merge remote changes. 
 
 
 ### Version control with Github
+---
 
-Assuming you've already created a folder inside your text editor. Now its time to create a github repo and push to github.
+Assuming you've already created a folder inside your text editor. Now its time to create a github repo and push to github. 
 
-1. Navigate to the working directory
+1. Navigate to the working directory 
 
   ```
   $ cd tutorialChatApp
@@ -118,7 +120,7 @@ Assuming you've already created a folder inside your text editor. Now its time t
   ```
   Your changes are now in your local working copy
 
-5. Push up to git via https (not SSH)- granted you have no troubles with your log in. Make sure
+5. Push up to git via https (not SSH)- granted you have no troubles with your log in. Make sure 
 
   ```
   $ git push origin master
@@ -259,7 +261,7 @@ Let's make a barebones HTML file that'll allow us to use the client for the chat
 
             </div>
         </div>
-
+        
         <!-- This div holds the input box -->
         <div class="bottom">
             <!-- <div class="bottom"> -->
@@ -293,7 +295,7 @@ In order for the client to connect to the server we'll want to set up some varia
 3. Let's setup event listeners for the client to determine what's happening.
 
 
-
+  
     client.addEventListener( 'open', function ( evt ) {
     } );
 
@@ -305,11 +307,11 @@ In order for the client to connect to the server we'll want to set up some varia
 
 
 
-4. Now to get more detailed...
+4. Now to get more detailed...    
 
     Upon connecting ('open') we want the client to set their name. In order to do this, let's have them send a message that changes their `userName` value. We'll utilize DOM manipulation and a keyboard event listener to do that.
-
-```javascript
+    
+```javascript    
 
 // upon open
      client.addEventListener( 'open', function () {
@@ -318,7 +320,7 @@ In order for the client to connect to the server we'll want to set up some varia
          // event listener on inputTwo
          inputTwo.addEventListener( 'keyup', function ( e ) {
              // if enter is pressed and the box is NOT empty
-             if ( e.keyCode === 13 && inputOne.value.trim() != '' ) {
+             if ( e.keyCode === 13 && inputOne.value.trim() != '' ) { 
                  // set the userName value...
                  var fixedDiv = document.querySelector( '#fixed' )
                  userName = inputOne.value;
@@ -331,7 +333,7 @@ In order for the client to connect to the server we'll want to set up some varia
 
 
 5. Now that we've set our client's name upon connect, let's tackle what happens when we recieve a message.
-
+    
 
     // upon recieving a message
       client.addEventListener( 'message', function ( message ) {
@@ -342,7 +344,7 @@ In order for the client to connect to the server we'll want to set up some varia
         li.innerText = input.value;
         // set it's id to 'msg'
         li.setAttribute( 'id', 'msg' )
-        // grab the ul element
+        // grab the ul element      
         var msgHolder = document.querySelector( "ul#msgHolder" );
         // and append it to include the new li
         msgHolder.appendChild( li );
@@ -354,7 +356,7 @@ In order for the client to connect to the server we'll want to set up some varia
 ```
 
 6. While we're not doing anything complex yet, you can certainly have events occur upon close. Let's make a couple edits to display this.
-
+    
     We'll add a boolean to the file
     ```javascript
     var userName = '';
@@ -378,11 +380,11 @@ While not necessary in our tutorial app, just note that it's possible to have ev
     Well.. there's an app for that...
     But seriously...
     We've already done it upon connection so let's make another event listener.
-
+  
       ```javascript
       // grab the inputMsg element
       var inputMsg = document.getElementById( 'inputMsg' )
-
+  
       inputMsg.addEventListener( 'keyup', function ( e ) {
           // upon pressing enter
           if ( e.keyCode === 13 ) {
@@ -398,6 +400,118 @@ While not necessary in our tutorial app, just note that it's possible to have ev
 
 
   And now you have a functional frontend JS file for your client!
+  
+##Styling
+---
+##Styling the app
+
+
+
+###CSS 
+
+We'll reference our HTML file here a few times so for the whole code, please refer to [clientSteps link here eventually](clientsteps link here)
+
+
+####Divs Divs Divs
+
+In order for us to have a responsive (and what other way is there to be?!) design let's start with some givens.
+
+1. Flexbox [link to flex](link here)
+    This alone will make your CSS life easier
+2. Use percentages and vh instead of fixed pixels when able to in order to have a relative design. [provide links on the side to responsive design]
+    With the following snippet in your header you're establishing that the width of the content will be the device width, and with percentages you should be able to have easy responsive design.
+```html
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+```
+3. Framework your design, whether by hand, inDesign, photoshop or just with divs alone before you start so you have a path.
+[more links](links)
+4. A good tip to remember while working with divs is to give them all different colored borders so you can tell where they are exactly and help you position them as well. This is espescially convenient when planning to make your site responsive. For example here are 2 divs that we'll be working on:
+```CSS
+
+div.container {
+    border: thin solid black;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+}
+
+.bottom {
+    border: thin solid orange;
+    height: 40px;
+    width: 80%;
+    margin: auto;
+}
+```
+
+
+
+---
+Keeping it simple, we're going to do our work with divs here.
+
+####Creating the CSS file
+1. So we've set up all our divs now:
+
+
+    div.container {
+        border: thin solid black;
+        height: 80%; /* set to 80% of the body */
+        width: 80%; /* set to 80% of the window */
+        display: flex;
+        margin: auto;
+    }
+    
+    div#fixed {
+        border: thin solid black;
+        min-height: 10vh; /* vh is viewport height - this says 10% of vh
+        margin: auto;
+        text-align: center;
+        padding: 2%;
+        overflow: auto;
+    }
+    
+    div#inset {
+        border: thin solid red;
+        height: 100%;
+        width: 100%;
+        min-width: 30vh;
+        overflow: auto;
+        align-self: center;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    div.bottom {
+        display: flex;
+        border: thin solid orange;
+        height: 40px; 
+        width: 80%;
+        display: flex;
+        margin: auto;
+        font-size: 1.25em; 
+    }
+
+
+1. Let's first set the font-family for the whole app. We've chosen Helvetica with arial as a backup incase Helvetica isn't available for some reason. 
+
+    * {
+        font-family: Helvetica, arial;
+      }
+
+
+2. Now let's work from the top down. First we'll style the header:
+
+
+    .header {
+        background-color: #999; 
+        font-size: 100%;    /*set the font-size to 100% (note the %)*/
+        text-align: center; 
+        width: 50%; /* we'll establish the width at 50%*/
+        m
+        argin-left: 25%; /* as we've set the width to 50% we can set the margin-left at                   25% thereby centering the element*/
+}
+
+
+
 </xmp>
 
 <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
