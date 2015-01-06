@@ -26,12 +26,42 @@ body {
   /*float: left;
   flex: 1;
   min-width: 30%;*/
+  margin-top: 15px;
   position: fixed;
+  overflow: hidden;
   top: 100;
   left: 0;
   height:100%;
   width: 30%;
-  background-color: black;
+  background-color: white;
+}
+
+.step {
+  background-color: grey;
+  color: black;
+  height: 40px;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 36px;
+}
+
+.top {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.inner{
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.bottom {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 xmp {
