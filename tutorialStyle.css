@@ -1,6 +1,9 @@
 * {
     font-family: Helvetica, arial, sans-serif;
 }
+body {
+    background-color: #666;
+}
 .header {
     background-color: #999; /*set the background-color*/
     font-size: 100%;    /*set the font-size to 100% (note the %)*/
@@ -13,8 +16,7 @@
     border: thin solid black;
     height: 80%;
     width: 80%;
-    /*min-width: 500px;*/
-    display: flex;
+    display: flex; /* Hey Alex... FLEXBOX! */
     margin: auto;
 }
 
@@ -46,12 +48,11 @@ p#enter {
 
 .bottom {
     display: flex;
-    border: thin solid orange;
+    background-color: 
     height: 40px;
     width: 80%;
     display: flex;
     margin: auto;
-    /*min-width: 500vh;*/
     font-size: 1.25em;
 }
 

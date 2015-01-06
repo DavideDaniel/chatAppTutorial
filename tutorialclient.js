@@ -9,14 +9,14 @@ client.addEventListener( 'open', function () {
 	console.log( "Connected to server." + connected );
 	// grab inputTwo
 
-	var inputTwo = document.getElementById( 'inputName' )
+	var inputName = document.getElementById( 'inputName' )
 	// event listener on inputTwo
-	inputTwo.addEventListener( 'keyup', function ( e ) {
+	inputName.addEventListener( 'keyup', function ( e ) {
 		// if enter is pressed and the box is NOT empty
-		if ( e.keyCode === 13 && inputOne.value.trim() != '' ) {
+		if ( e.keyCode === 13 && inputName.value.trim() != '' ) {
 			// set the userName value...
 			var fixedDiv = document.querySelector( '#fixed' )
-			userName = inputOne.value;
+			userName = inputName.value;
 			// and grab the fixedDiv and set it's style to make it disappear!
 			fixedDiv.style.display = 'none';
 		}
@@ -29,13 +29,14 @@ client.addEventListener( 'message', function ( message ) {
 	//create an li element
 	var li = document.createElement( 'li' );
 	// change it's innerText value to the recieved message
-	li.innerText = input.value;
+	li.innerText = message.data;
 	// set it's id to 'msg'
 	li.setAttribute( 'id', 'msg' )
 	// grab the ul element  	
-	var msgHolder = document.querySelector( "ul#msgHolder" );
+
+	var ul = document.getElementById( "msgHolder" );
 	// and append it to include the new li
-	msgHolder.appendChild( li );
+	ul.appendChild( li );
 	// then have it display BEFORE the newest element
 	var before = ul.firstChild;
 	ul.insertBefore( li, before )
@@ -51,9 +52,9 @@ var inputMsg = document.getElementById( 'inputMsg' )
 
 inputMsg.addEventListener( 'keyup', function ( e ) {
 	if ( e.keyCode === 13 ) {
-		var newMessage = input.value;
+		var newMessage = inputMsg.value;
 		client.send( userName + ': ' + newMessage );
-		input.value = ''; //clear the input area
+		inputMsg.value = ''; //clear the input area
 	}
 
 } );
