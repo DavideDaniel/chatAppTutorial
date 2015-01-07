@@ -1,0 +1,761 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>[Intro](#1) | [Git repos](#2) | [GitHub](#2) | [Server side](#3) | [Client side](#chapter4) | [Testing locally](#5) | [Styling](#chapter-6) [Hosting](#chapter-7)</title>
+
+</head>
+<body>
+<h4><a href="#1">Intro</a> | <a href="#2">Git repos</a> | <a href="#2">GitHub</a> | <a href="#3">Server side</a> | <a href="#chapter4">Client side</a> | <a href="#5">Testing locally</a> | <a href="#chapter-6">Styling</a> <a href="#chapter-7">Hosting</a></h4>
+
+<hr />
+
+<h1>Chat App Tutorial</h1>
+
+<hr />
+
+<p><h2 id = "1">Build your own chat app!</h3></p>
+
+<hr />
+
+<p>If you'd like to create the next SnapChat, proceed.</p>
+
+<p>If you'd like to be the creator of a new and improved SnapChat, read on.</p>
+
+<p>You still there? Awesome. Thanks for checking out our tutorial!</p>
+
+<p>Today you'll learn how to create your first functional, peer to peer, chat app. For many beginner JavaScript developers, building one of these has become somewhat of a rite of passage so congratulations, welcome to the club. Chatapp projects are a good place to test your budding Javascript skills because it's framework comprise of complex yet accessible parts.</p>
+
+<p>Here, we'll show you the basic framework. And from the framework, we'll go on to teach you how to style, test, and host your site! Sounds like a lot right? Don't panic, youre in good hand. By the end of our tutorial, you'll be able to build features that go above and beyond the SnapChat-standard.</p>
+
+<p>We'll teach you what a server and client does and of course give you instruction on the code to make the server and client connect with each other.</p>
+
+<p>By the end you will have learned: how to create a server and client, how to get them communicating with each other, how to style the app, how to test it, how to host it, and finally,  how to impress the internet by pushing your code to Github.</p>
+
+<h3>WebSockets</h3>
+
+<hr />
+
+<p>A WebSocket is a technology, based on the WS protocol, that makes it possible to establish a continuous full-duplex connection stream between a client and a server. A typical WebSocket client would be a user's browser, but the protocol is platform independent. The WebSocket API is available to JavaScript code whose scope is either a DOM Window object or any object implementing WorkerUtil.</p>
+
+<p>The WebSockets API was originally part of the HTML5 standard, but it has been split off into a separate W3C standard. The WebSockets protocol is an IETF standard described in RFC 6455.
+The WebSockets API has full browser support in Chrome 14, Firefox 6, IE 10 (desktop and mobile), Opera 12.1 (desktop and moblie), Safari 6.0 (desktop and mobile), Android 4.4, Chrome Mobile, and Firefox Mobile. Some older browsers have partial support or can be supported using a Flash based fallback.</p>
+
+<p>This simple example creates a new WebSocket, connecting to the server at:</p>
+
+<pre><code>    var WebSocket = require("ws");
+    var ws = new WebSocket("ws://localhost:3000");
+
+    ws.on("open", function () {
+        console.log("Connected to server.");
+    });
+</code></pre>
+
+<p><br></p>
+
+<hr />
+
+<h1>Git &amp; Github</h1>
+
+<hr />
+
+<p><h3 id = "2">Creating a Git Repository</h3></p>
+
+<p>The git init command creates a new Git repository. It can be used to convert an existing, unversioned project to a Git repository or initialize a new empty repository. Most of the other Git commands are not available outside of an initialized repository, so this is usually the first command you’ll run in a new project.</p>
+
+<p>The git clone command copies an existing Git repository. This is sort of like svn checkout, except the “working copy” is a full-fledged Git repository—it has its own history, manages its own files, and is a completely isolated environment from the original repository.</p>
+
+<p>The git config command lets you configure your Git installation (or an individual repository) from the command line. This command can define everything from user info to preferences to the behavior of a repository. Several common configuration options are listed below.</p>
+
+<p>Linktos or Asides or Syntax Bubble:</p>
+
+<p>Executing git init creates a .git subdirectory in the project root, which contains all of the necessary metadata for the repo, and makes it possible to start recording revisions of the project..</p>
+
+<pre><code>        $ git clone &lt;repository link&gt;
+</code></pre>
+
+<p>Clone the repository located at <repo> onto the local machine. The original repository can be located on the local filesystem or on a remote machine accessible via HTTP or SSH.</p>
+
+<p>To update your local repository to the newest commit, execute git pull in your working directory to fetch and merge remote changes.</p>
+
+<h3>Version control with Github</h3>
+
+<hr />
+
+<p>Assuming you've already created a folder inside your text editor. Now its time to create a github repo and push to github.</p>
+
+<ol>
+<li><p>Navigate to the working directory</p>
+
+<pre><code> $ cd tutorialChatApp
+</code></pre></li>
+<li><p>Check status &amp; proceed</p>
+
+<pre><code> $ git status
+</code></pre></li>
+<li><p>Add any changes - note <code>add .</code> will add all but you can also specify files</p>
+
+<pre><code> $ git add .
+</code></pre></li>
+<li><p>Commit your changes - whatever you write here will help in tracking changes</p>
+
+<pre><code> $ git commit -m "First commit"
+</code></pre>
+
+<p> Your changes are now in your local working copy.
+<br>
+<br></p></li>
+<li><p>Push up to git via https (not SSH)- granted you have no troubles with your log in. Make sure</p>
+
+<pre><code> $ git push origin master
+</code></pre>
+
+<p><br></p></li>
+</ol>
+
+
+<hr />
+
+<h1>Backend</h1>
+
+<hr />
+
+<p><h3 id = "3">Setting up the server</h3></p>
+
+<hr />
+
+<p>A websocket server can receive and send data among multiple clients, and
+is necessary to host your chat app. The purpose of this server is to
+relay messages,  This code will require several crucial lines of code,
+but additional features can be added to make your chat app more robust.</p>
+
+<ol>
+<li><p>First, the ws module must be required.</p>
+
+<p> <pre class="prettyprint">
+ var WebSocket = require("ws").Server;
+ var chatServer = new WebSocket({port:3000});
+ </pre></p>
+
+<p> Note that the Server method is necessary when requiring ws for the
+purpose of creating a server. A port number of your choice should be
+declared, but it must consistent across future code in order for the
+server and clients to interact.</p></li>
+<li><p>An empty array should be created to track clients connecting to the
+server. This will allow the server to send information to multiple
+clients at once.
+<pre class="prettyprint">
+var users = [];
+</pre></p></li>
+<li><p>Event listeners are added to the server in order to define how it
+handles connections and messages.</p>
+
+<p>  <pre class="prettyprint">
+  chatServer.on("connection" , function(ws){
+  console.log("connection");
+  users.push(ws);
+  }
+  </pre></p>
+
+<p>  The above code adds every connecting client to the users array, and
+console logs a simple message that will help you monitor /test
+functionality. Nested within the above function, you must also add
+event listeners to the clients, which are defined above by the ws parameter.</p>
+
+<p>  <pre class="prettyprint">
+  ws.on("message" , function(msg){
+  console.log(msg);
+  users.forEach(function(usr){usr.send(msg)});
+})
+</pre></p></li>
+<li><p>Every time there is a message event, the above code will log that
+message on the server console, and send the message to every user in the
+users array, including the original sender.</p></li>
+<li><p>This next step is virtually essential. In the event a client disconnects,
+any attempt the server makes to send a message will cause it to crash.
+We must add another event listener to the client that will remove it
+from the users array on a close event.</p></li>
+</ol>
+
+
+<p><pre class="prettyprint">
+  ws.on("close" , function(){
+      var clientIndex = users.indexOf(ws);
+      users.splice(clientIndex,1);
+      console.log("a client has disconnected");
+  })
+</pre>
+Every time a client disconnects, the above code finds the index of that
+client with the users array, and then deletes their information from the
+array. This code in its current state is completely usable for the purpose
+of serving a simple chat app.</p>
+
+<p><pre class="prettyprint">
+  var WebSocket = require("ws").Server;
+  var chatServ = new WebSocket({port:3000});
+  var users = [];</p>
+
+<p>  chatServ.on("connection" , function(ws){
+    console.log("connection");
+    users.push(ws);</p>
+
+<pre><code>ws.on("message" , function(msg){
+  console.log(msg);
+  users.forEach(function(usr){usr.send(msg)});
+})
+
+ws.on("close" , function(){
+  var client = users.indexOf(ws);
+  users.splice(client,1);
+  console.log("a client has disconnected");
+})
+</code></pre>
+
+<p>  })
+</pre></p>
+
+<p>Other possible features you might want to consider adding to your app are
+a persistent message history, private messages between users, and word filtering
+functions. Incorporating JSON into your code will allow you to package more
+information in every message beyond simple strings.</p>
+
+<p></span></p>
+
+<p></div></p>
+
+<p><h3 id = "4">Client Side</h3></p>
+
+<h4>HTML file</h4>
+
+<p>Let's make a barebones HTML file that'll allow us to use the client for the chat app.</p>
+
+<p>```html
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- link to style sheet - we'll get to this later! -->
+        <link rel="stylesheet" type="text/css" href="tutorialStyle.css"></p>
+
+<pre><code>    &lt;title&gt;Chat&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- In the beginning there was a div for the header --&gt;
+    &lt;div class="header"&gt;
+        &lt;h2&gt;Chat App&lt;/h2&gt;
+    &lt;/div&gt;
+
+    &lt;!-- But! Here's a div that binds them all! --&gt;
+    &lt;div class="container"&gt;
+        &lt;!-- and in the darkness... presents the message... --&gt;
+        &lt;div id="inset"&gt;
+            &lt;!-- but first this div collects your name! --&gt;
+            &lt;div id = "fixed"&gt;
+                &lt;p id="enter"&gt; Please enter your screen name:&lt;/p&gt;&lt;/br&gt;
+                &lt;input type="text" id="inputOne" placeholder="Name"&gt;&lt;/input&gt;
+            &lt;/div&gt;
+
+            &lt;ul id="msgHolder"&gt;&lt;/ul&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- This div holds the input box --&gt;
+    &lt;div class="bottom"&gt;
+        &lt;!-- &lt;div class="bottom"&gt; --&gt;
+            &lt;input placeholder="Type here" id="inputMsg"&gt;&lt;/input&gt;
+        &lt;!-- &lt;/div&gt; --&gt;
+    &lt;/div&gt;
+</code></pre>
+
+<p><script type="text/javascript" src="tutorialclient.js"></script>
+</body>
+</html></p>
+
+<h3>Client JS file</h3>
+
+<p>In order for the client to connect to the server we'll want to set up some variables.</p>
+
+<ol>
+<li><p>Establish a new Websocket client. Remember to be explicit in naming your variables!</p>
+
+<p> var client = new WebSocket( "ws://localhost:3000" );</p></li>
+<li><p>Let's say that our client is going to log in and have a name. But prior to connecting the name will be a string that is empty.</p>
+
+<p> <code>javascript
+ var userName = '';
+ var connected = true;
+</code></p></li>
+<li><p>Let's setup event listeners for the client to determine what's happening.</p>
+
+<p> client.addEventListener( 'open', function ( evt ) {
+ } );</p>
+
+<p> client.addEventListener( 'message', function ( message ) {
+ } )</p>
+
+<p> client.addEventListener( 'close', function ( evt ) {
+ } );</p></li>
+<li><p>Now to get more detailed...</p>
+
+<p> Upon connecting ('open') we want the client to set their name. In order to do this, let's have them send a message that changes their <code>userName</code> value. We'll utilize DOM manipulation and a keyboard event listener to do that.</p></li>
+</ol>
+
+
+<p>```javascript</p>
+
+<p>// upon open
+     client.addEventListener( 'open', function () {
+         // grab inputTwo
+         var inputTwo = document.getElementById( 'inputTwo' )
+         // event listener on inputTwo
+         inputTwo.addEventListener( 'keyup', function ( e ) {
+             // if enter is pressed and the box is NOT empty
+             if ( e.keyCode === 13 &amp;&amp; inputOne.value.trim() != '' ) {
+                 // set the userName value...
+                 var fixedDiv = document.querySelector( '#fixed' )
+                 userName = inputOne.value;
+                // and grab the fixedDiv and set it's style to make it disappear!
+                fixedDiv.style.display = 'none';
+            }
+        } );
+    } );
+```</p>
+
+<ol>
+<li><p>Now that we've set our client's name upon connect, let's tackle what happens when we recieve a message.</p>
+
+<pre><code> // upon recieving a message
+ client.addEventListener( 'message', function ( message ) {
+
+ //create an li element
+ var li = document.createElement( "li" );
+ // change it's innerText value to the recieved message
+ li.innerText = input.value;
+ // set it's id to 'msg'
+ li.setAttribute( 'id', 'msg' )
+ // grab the ul element      
+ var msgHolder = document.querySelector( "ul#msgHolder" );
+ // and append it to include the new li
+ msgHolder.appendChild( li );
+ // then have it display BEFORE the newest element
+ var before = ul.firstChild;
+ ul.insertBefore( li, before )
+</code></pre>
+
+<p> } );
+```</p></li>
+<li><p>While we're not doing anything complex yet, you can certainly have events occur upon close. Let's make a couple edits to display this.</p>
+
+<p> We'll add a boolean to the file
+ <code>javascript
+ var userName = '';
+ var connected = false; //set to false by default
+</code></p>
+
+<p> and have it return true upon connect
+ <code>javascript
+ client.addEventListener( 'open', function () {
+     connected = true;
+</code></p>
+
+<p> and have it return back to false upon close!
+ <code>javascript
+ client.addEventListener( 'close', function () {
+     connected = false;
+</code>
+While not necessary in our tutorial app, just note that it's possible to have events occur on the client side but you can't send anything to the server upon close.</p></li>
+<li><p>BUT WAIT! How on earth do we send messages?!!
+ Well.. there's an app for that...
+ But seriously...
+ We've already done it upon connection so let's make another event listener.</p>
+
+<pre><code> ```javascript
+ // grab the inputMsg element
+ var inputMsg = document.getElementById( 'inputMsg' )
+
+ inputMsg.addEventListener( 'keyup', function ( e ) {
+     // upon pressing enter
+     if ( e.keyCode === 13 ) {
+         // grab the text in the input box and call it newMessage
+         var newMessage = input.value;
+         // with the .send method let's format and send our name &amp; message
+         client.send( userName + ': ' + newMessage );
+         // finally, let's clear the input box
+         input.value = ''; //clear the input area
+     }
+ } );
+ ```
+</code></pre>
+
+<p> And now you have a functional frontend JS file for your client!</p></li>
+</ol>
+
+
+<hr />
+
+<p><h2 id = "5"> Styling </h2></p>
+
+<hr />
+
+<h3>Styling the app</h3>
+
+<p>We'll reference our HTML file here a few times so for the whole code, please refer to <a href="clientsteps%20link%20here">clientSteps link here eventually</a></p>
+
+<h4>Divs Divs Divs</h4>
+
+<p>In order for us to have a responsive (and what other way is there to be?!) design let's start with some givens.</p>
+
+<ol>
+<li>Flexbox <a href="link%20here">link to flex</a>
+ This alone will make your CSS life easier</li>
+<li>Use percentages and vh instead of fixed pixels when able to in order to have a relative design. [provide links on the side to responsive design]
+ With the following snippet in your header you're establishing that the width of the content will be the device width, and with percentages you should be able to have easy responsive design.
+<code>html
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+</code></li>
+<li>Framework your design, whether by hand, inDesign, photoshop or just with divs alone before you start so you have a path.
+<a href="links">more links</a></li>
+<li>A good tip to remember while working with divs is to give them all different colored borders so you can tell where they are exactly and help you position them as well. This is espescially convenient when planning to make your site responsive. For example here are 2 divs that we'll be working on:
+```CSS</li>
+</ol>
+
+
+<p>div.container {
+    border: thin solid black;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+}</p>
+
+<p>.bottom {
+    border: thin solid orange;
+    height: 40px;
+    width: 80%;
+    margin: auto;
+}
+```</p>
+
+<hr />
+
+<p>Keeping it simple, we're going to do our work with divs here.</p>
+
+<h4>Creating the CSS file</h4>
+
+<ol>
+<li><p>Let's set up all our divs now so we can view the frame:</p>
+
+<pre><code> div.container {
+     border: thin solid black;
+     height: 80%; /* set to 80% of the body */
+     width: 80%; /* set to 80% of the window */
+     display: flex;
+     margin: auto;
+ }
+
+ div#fixed {
+     border: thin solid black;
+     min-height: 10vh; /* vh is viewport height - this says 10% of vh
+     margin: auto;
+     text-align: center;
+     padding: 2%;
+     overflow: auto;
+ }
+
+ div#inset {
+     border: thin solid red;
+     height: 100%;
+     width: 100%;
+     min-width: 30vh;
+     overflow: auto;
+     align-self: center;
+     display: flex;
+     flex-direction: column-reverse;
+ }
+
+ div.bottom {
+     display: flex;
+     border: thin solid orange;
+     height: 40px; 
+     width: 80%;
+     display: flex;
+     margin: auto;
+     font-size: 1.25em; 
+ }
+</code></pre></li>
+<li><p>Now let's set the font-family for the whole app. We've chosen Helvetica with arial as a backup incase Helvetica isn't available for some reason.</p>
+
+<pre><code> * {
+     font-family: Helvetica, arial;
+   }
+</code></pre></li>
+<li><p>Now let's work from the top down.  We'll style the header:</p>
+
+<pre><code> .header {
+     background-color: #999;
+
+     font-size: 100%;    /* set the font-size to 100% */
+
+     text-align: center; /* set the text-align value to center */
+
+     width: 50%; /* we'll establish the width at 50% */
+
+     /* as we've set the width to 50% we can set the margin-le                               25% thereby centering the element*/
+
+     margin-left: 25%; 
+ }
+</code></pre>
+
+<p> The body just needs a color if at all.</p></li>
+<li><p>We are setting the container div to have <code>display: flex;</code> in order to easily vertical center the fixed div that'll appear upon login.</p>
+
+<pre><code> div.container {
+     height: 80%;
+     width: 80%;
+     display: flex; /* Hey Alex... FLEXBOX! */
+     margin: auto; 
+ }
+
+ div#fixed {
+     min-height: 10vh;
+     margin: auto; /*setting the display of the parent to flex lets you vertical center                          with just this line!*/
+     text-align: center;
+     padding: 2%;
+     overflow: auto;
+ }
+</code></pre>
+
+<p> Note that we've removed the borders now.</p></li>
+<li></li>
+</ol>
+
+
+<hr />
+
+<p><h2 id = "6"> Hosting your chat app </h2></p>
+
+<hr />
+
+<h3>Push files to Github</h3>
+
+<p>Before we can set up a the hosting side of things we need to make sure out github is up to date!</p>
+
+<p>As you remember in steps one and two we set up the git repo and connected it to our github repo.</p>
+
+<p>Lets push our files up to that repo:</p>
+
+<ol>
+<li><p>first initiate push by typing in the terminal:</p>
+
+<pre><code> $ git add .
+</code></pre></li>
+<li><p>Then asign a commit log by typing in the terminal:</p>
+
+<pre><code> $ git commit -m “first commit”
+</code></pre></li>
+<li><p>then push it by typing in the terminal:</p>
+
+<pre><code> $ git push master origin
+</code></pre>
+
+<p> Your files are now ready on Github!</p></li>
+</ol>
+
+
+<h3>Hosting through your server</h3>
+
+<p>In order to host your files on the internet publicly we'll need to set up your server. Let's SSH into the server.</p>
+
+<ol>
+<li><p>Open up a new terminal window.in the terminal type:</p>
+
+<pre><code> $ ssh root@yourserveraddress
+</code></pre>
+
+<p> Have your login information handy as you'll need to enter it here</p></li>
+</ol>
+
+
+<p>CLONE GITHUB REPO
+— Now that we are in the server we need to clone our repo over so that we have all the files.</p>
+
+<p>— go to your github page and find the directory address and copy it.</p>
+
+<p>— in the Server Terminal type: git clone directoryAddress</p>
+
+<p>— once it has cloned, type in ls in the command line and press enter. This should show you if it is in the directory. cd into the folder.</p>
+
+<p>RUN NODE.JS FILE
+— Now that we have our file all set up we need to start our server, run your node file just like you did in step 6. if you need help or reference, here is a link back the step.</p>
+
+<p>— Now open up a new terminal and ssh into your server again using #2 in this step.</p>
+
+<p>HTTP-SERVER
+— Once you have your second terminal open and your ssh’d in, its time to start up your server.</p>
+
+<p>— In the terminal type in: http-server -p80</p>
+
+<p>— this should start the server and allow you to go to the server address and see your chat app up and running. The -p80 at the end allows you to not have to have a subdomain and make a clean and tidy server address. If any errors occur you can see them on the terminal where you are running the node file and also in the client side browser in the developer tools.</p>
+
+<p>SHUTTING DOWN THE SERVER
+— when you are done or need to fix a bug, press CONTROL + C at anytime to shut the server down. you will need to shut the node file down as well.</p>
+
+<p>— then you will fix changes locally, then push up to github.</p>
+
+<p>— once they are pushed go into the ssh terminal and you will need to pull the files up.</p>
+
+<p>— to do this type in the terminal: git pull master origin</p>
+
+<p>— now repeat the steps in #4 and #5.</p>
+</body>
+</html>

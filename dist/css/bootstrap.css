@@ -34,44 +34,44 @@ body {
 
 #gitLink {
   position: absolute;
-  top: 900px;
+  top: 1475px;
   width: 23%;
 }
 
 #githubLink {
   position: absolute;
-  top: 925px;
+  top: 1500px;
   width: 23%;
 }
 
 
 #serverLink {
   position: absolute;
-  top: 2150px;
+  top: 2875px;
   width: 23%;
 }
 
 #serverLink2 {
   position: absolute;
-  top: 2175px;
+  top: 2900px;
   width: 23%;
 }
 
 #serverLink3 {
   position: absolute;
-  top: 2200px;
+  top: 2925px;
   width: 23%;
 }
 
 #clientLink {
   position: absolute;
-  top: 3750px;
+  top: 4350px;
   width: 23%;
 }
 
 #clientLink2 {
   position: absolute;
-  top: 3775px;
+  top: 4375px;
   width: 23%;
 }
 
