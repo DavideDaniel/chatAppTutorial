@@ -1,5 +1,5 @@
 * {
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
 }
 body {
     background-color: #666;
@@ -36,32 +36,46 @@ p#enter {
 }
 
 #inset {
-    border: thin solid red;
-    height: 100%;
-    width: 100%;
-    min-width: 30vh;
-    overflow: auto;
-    align-self: center;
-    display: flex;
-    flex-direction: column-reverse;
-}
+   background-color: #1a1a1a;
+   color: #2cbda9;
+   height: 100%;
+   width: 100%;
+   min-width: 30vh;
+   overflow: auto;
+   align-self: center;
+   display: flex;
+   flex-direction: column-reverse;
+ }
 
-.bottom {
-    display: flex;
-    background-color: 
-    height: 40px;
-    width: 80%;
-    display: flex;
-    margin: auto;
-    font-size: 1.25em;
-}
+ .bottom {
+   display: flex;
+   background-color: #333;
+   height: 40px;
+   width: 80%;
+   display: flex;
+   margin: auto;
+   font-size: 1.25em;
+ }
 
-#inputMsg {
-    flex: 2;
-    font-size: 1em;
-}
-
-li#msg {
-    margin-right: 5%;
-    list-style-type: none;
-}
+input {
+         border-style: none;
+         background-color: #333;
+     }
+     #inputName {
+         color: #ff323b;
+         font-size: 1em;
+         text-align: center;
+     }
+     #inputMsg {
+         flex: 2;
+         /*FLEXBOX! This flex setting allows us to span the input to the entire div*/
+         font-size: 1em;
+         padding-left: 1%;
+         /*When adjusting the blank space, remember to stay responsive!*/
+         background-color: #333;
+         color: #ff323b;
+     }
+     li#msg {
+         margin-right: 5%;
+         list-style-type: none;
+     }

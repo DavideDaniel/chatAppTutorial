@@ -7,7 +7,7 @@ div.sidepanel {
 }
 
 pre {
-  background-color: #222222;
+  background-color: #1a1a1a;
   padding: 1em;
   width: 50%;
   font-size:.7em;
@@ -15,44 +15,43 @@ pre {
 }
 pre code {
   font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
-
 }
-pre .pln {
+pre.pln {
   color: #e3e2e0;
 }
-pre .str {
+pre.str {
   color: #3bc7b8;
 }
-pre .kwd {
+pre.kwd {
   color: #FF4E50;
 }
-pre .com {
+pre.com {
   color: #777777;
 }
-pre .typ {
+pre.typ {
   color: #3bc7b8;
 }
-pre .lit {
+pre.lit {
   color: #c3cb4c;
 }
-pre .pun,
-pre .opn,
-pre .clo {
+pre.pun,
+pre.opn,
+pre.clo {
   color: #e3e2e0;
 }
-pre .tag {
+pre.tag {
   color: #FF4E50;
 }
-pre .atn {
+pre.atn {
   color: #3bc7b8;
 }
-pre .atv {
+pre.atv {
   color: #c3cb4c;
 }
-pre .dec,
-pre .var {
+pre.dec,
+pre.var {
   color: #3bc7b8;
 }
-pre .fun {
+pre.fun {
   color: #FF4E50;
 }

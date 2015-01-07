@@ -17,6 +17,55 @@ body {
   margin: 0;
   display: flex;
 }
+pre {
+  background-color: #1a1a1a;
+  padding: 1em;
+  width: 80%;
+  font-size:.7em;
+  color: #e3e2e0;
+}
+pre code {
+  font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+}
+pre.pln {
+  color: #e3e2e0;
+}
+pre.str {
+  color: #3bc7b8;
+}
+pre.kwd {
+  color: #FF4E50;
+}
+pre.com {
+  color: #777777;
+}
+pre.typ {
+  color: #3bc7b8;
+}
+pre.lit {
+  color: #c3cb4c;
+}
+pre.pun,
+pre.opn,
+pre.clo {
+  color: #e3e2e0;
+}
+pre.tag {
+  color: #FF4E50;
+}
+pre.atn {
+  color: #3bc7b8;
+}
+pre.atv {
+  color: #c3cb4c;
+}
+pre.dec,
+pre.var {
+  color: #3bc7b8;
+}
+pre.fun {
+  color: #FF4E50;
+}
 
 #links {
   float: left;
