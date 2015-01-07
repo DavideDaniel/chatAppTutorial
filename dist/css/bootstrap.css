@@ -18,8 +18,69 @@ body {
   display: flex;
 }
 
+#links {
+  float: left;
+  width: 30%;
+}
+
+/*.link a {
+  position: absolute;
+  right: 0;
+}*/
+
+.link a {
+  float: right;
+}
+
+#gitLink {
+  position: absolute;
+  top: 1475px;
+  width: 23%;
+}
+
+#githubLink {
+  position: absolute;
+  top: 1500px;
+  width: 23%;
+}
+
+
+#serverLink {
+  position: absolute;
+  top: 2875px;
+  width: 23%;
+}
+
+#serverLink2 {
+  position: absolute;
+  top: 2900px;
+  width: 23%;
+}
+
+#serverLink3 {
+  position: absolute;
+  top: 2925px;
+  width: 23%;
+}
+
+#clientLink {
+  position: absolute;
+  top: 4350px;
+  width: 23%;
+}
+
+#clientLink2 {
+  position: absolute;
+  top: 4375px;
+  width: 23%;
+}
+
+
+
+
 #content {
-  margin-left: 30%;
+  /*margin-left: 30%;*/
+
 }
 
 .nav_menu {
@@ -27,42 +88,60 @@ body {
   flex: 1;
   min-width: 30%;*/
   margin-top: 15px;
+  margin-left: 2.5%;
+  margin-right: 5%;
   position: fixed;
   overflow: hidden;
   top: 100;
   left: 0;
-  height:100%;
-  width: 30%;
+  height: 210px;
+  width: 10%;
+  border: 1px solid #317eac;
   background-color: white;
+  z-index: 100;
 }
 
 .step {
-  background-color: grey;
-  color: black;
-  height: 40px;
+  /*width: 20%;*/
+
+  color: #317eac;
+  height: 30px;
   text-align: center;
-  font-size: 1.5em;
-  line-height: 36px;
+  font-size: 1.1em;
+  line-height: 30px;
 }
 
-.top {
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+.step:active {
+  background-color: #2893e5;
+  color: white;
+}
+
+.step.active {
+  background-color: #2893e5;
+  color: white;
+}
+
+
+
+
+/*.top {
+  border-top: 1px solid #317eac;
+  border-left: 1px solid #317eac;
+  border-right: 1px solid #317eac;
 }
 
 .inner{
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 1px solid #317eac;
+  border-left: 1px solid #317eac;
+  border-right: 1px solid #317eac;
 }
 
 .bottom {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-}
+  border-top: 1px solid #317eac;
+  border-bottom: 1px solid #317eac;
+  border-left: 1px solid #317eac;
+  border-right: 1px solid #317eac;
+}*/
 
 xmp {
 
