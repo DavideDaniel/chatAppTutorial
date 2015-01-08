@@ -1,7 +1,14 @@
 
 #Chat App Tutorial
 ---
+We worked on this as a group project after constructing our own chat apps.
 
+Contributers:
+
+[David](https://github.com/DavideDaniel)
+| [Marc](https://github.com/mderisse)
+| [Kyle](https://github.com/kyle1980)
+| [Trey](https://github.com/jacksrf)
 
 <h2 id = "1">Build your own chat app!</h2>
 
